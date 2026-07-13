@@ -17,7 +17,7 @@ catalog:
   "@hono/node-server": 2.0.8
   "@orpc/client": 2.0.0-beta.14
   "@orpc/contract": 2.0.0-beta.14
-  "@orpc/server": 2.0.0-beta.14
+  "@orpc/server": 2.0.0-beta.15
   "@prisma/adapter-pg": 7.8.0
   "@prisma/client": 7.8.0
   "@temporalio/client": 1.19.0
