@@ -1,0 +1,19 @@
+// Prisma 7 schema — a single Todo model in Postgres. The connection URL lives in
+// `prisma.config.ts` (for Migrate) and is passed to `PrismaClient` via a driver adapter at
+// runtime (see src/infra/prisma.ts), not here.
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Todo {
+  id        String   @id @default(uuid())
+  title     String
+  completed Boolean  @default(false)
+  createdAt DateTime @default(now())
+}

@@ -1,0 +1,9 @@
+{
+  "extends": "@btravstack/tsconfig/base.json",
+  "compilerOptions": {
+    "rootDir": "./src",
+    "allowImportingTsExtensions": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "src/generated"]
+}

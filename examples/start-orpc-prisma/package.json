@@ -1,0 +1,39 @@
+{
+  "name": "@btravstack-examples/start-orpc-prisma",
+  "private": true,
+  "description": "A typed oRPC HTTP API on btravstack start, backed by Prisma/Postgres: defineConfig + demesne-wired use cases + oRPC router with end-to-end typed errors + start-api's listener + runHost. Tested via an in-process typed client against a fake repository.",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "postinstall": "prisma generate",
+    "prisma:generate": "prisma generate",
+    "test": "vitest run",
+    "test:integration": "vitest run --config vitest.integration.config.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@btravstack/start-api": "workspace:*",
+    "@btravstack/start-kernel": "workspace:*",
+    "@orpc/contract": "catalog:",
+    "@orpc/server": "catalog:",
+    "@prisma/adapter-pg": "catalog:",
+    "@prisma/client": "catalog:",
+    "@unthrown/orpc": "catalog:",
+    "@unthrown/prisma": "catalog:",
+    "demesne": "catalog:",
+    "hono": "catalog:",
+    "unthrown": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@btravstack/tsconfig": "workspace:*",
+    "@orpc/client": "catalog:",
+    "@testcontainers/postgresql": "catalog:",
+    "@types/node": "catalog:",
+    "@unthrown/vitest": "catalog:",
+    "prisma": "catalog:",
+    "tsx": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  }
+}

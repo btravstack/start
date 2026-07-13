@@ -1,0 +1,29 @@
+{
+  "name": "@btravstack-examples/start-amqp-worker",
+  "private": true,
+  "description": "An AMQP consumer built on btravstack start: a demesne-wired charge use case consumed from RabbitMQ via a real amqplib driver, with ack/requeue/dead-letter dispositions and idempotent redelivery.",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "test": "vitest run",
+    "test:integration": "vitest run --config vitest.integration.config.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@btravstack/start-amqp": "workspace:*",
+    "@btravstack/start-kernel": "workspace:*",
+    "amqplib": "catalog:",
+    "demesne": "catalog:",
+    "unthrown": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@btravstack/tsconfig": "workspace:*",
+    "@testcontainers/rabbitmq": "catalog:",
+    "@types/amqplib": "catalog:",
+    "@types/node": "catalog:",
+    "tsx": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  }
+}

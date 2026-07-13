@@ -1,0 +1,44 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": ["**/.env.*local"],
+  "tasks": {
+    "typecheck": {
+      "dependsOn": ["^build"]
+    },
+    "test": {
+      "dependsOn": ["^build"],
+      "cache": false
+    },
+    "prisma:generate": {
+      "cache": false
+    },
+    "@btravstack-examples/start-orpc-prisma#typecheck": {
+      "dependsOn": ["^build", "prisma:generate"]
+    },
+    "@btravstack-examples/start-orpc-prisma#test": {
+      "dependsOn": ["^build", "prisma:generate"],
+      "cache": false
+    },
+    "test:integration": {
+      "dependsOn": ["^build"],
+      "cache": false
+    },
+    "@btravstack-examples/start-orpc-prisma#test:integration": {
+      "dependsOn": ["^build", "prisma:generate"],
+      "cache": false
+    },
+    "dev": {
+      "dependsOn": ["^build"],
+      "cache": false,
+      "persistent": true
+    },
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"]
+    },
+    "build:docs": {
+      "dependsOn": ["^build"],
+      "outputs": ["docs/**"]
+    }
+  }
+}

@@ -1,0 +1,5 @@
+# Prisma's generated client — regenerated on install (postinstall) and by the
+# typecheck/test scripts. Not committed.
+src/generated/
+
+.env

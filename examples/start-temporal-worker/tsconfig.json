@@ -1,0 +1,4 @@
+{
+  "extends": "@btravstack/tsconfig/base.json",
+  "include": ["src/**/*"]
+}

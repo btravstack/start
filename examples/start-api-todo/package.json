@@ -1,0 +1,26 @@
+{
+  "name": "@btravstack-examples/start-api-todo",
+  "private": true,
+  "description": "A todo HTTP API built on btravstack start: defineConfig + demesne-wired use cases + start-api host + runHost, with an in-memory repository as the swappable adapter.",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "test": "vitest run",
+    "test:integration": "vitest run --config vitest.integration.config.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@btravstack/start-api": "workspace:*",
+    "@btravstack/start-kernel": "workspace:*",
+    "demesne": "catalog:",
+    "unthrown": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@btravstack/tsconfig": "workspace:*",
+    "@types/node": "catalog:",
+    "tsx": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  }
+}

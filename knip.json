@@ -1,0 +1,22 @@
+{
+  "$schema": "https://unpkg.com/knip@6/schema.json",
+  "ignoreExportsUsedInFile": true,
+  "ignore": ["**/*.test-d.ts"],
+  "workspaces": {
+    "packages/*": {
+      "project": ["src/**/*.ts"],
+      "ignoreDependencies": ["typedoc-plugin-markdown", "@btravstack/typedoc"]
+    },
+    "examples/*": {
+      "project": ["src/**/*.ts"]
+    },
+    "examples/start-orpc-prisma": {
+      "project": ["src/**/*.ts", "!src/generated/**"],
+      "ignoreDependencies": ["@orpc/contract"]
+    },
+    "examples/start-temporal-worker": {
+      "project": ["src/**/*.ts"],
+      "entry": ["src/workflow.ts"]
+    }
+  }
+}

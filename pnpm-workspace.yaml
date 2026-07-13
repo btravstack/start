@@ -1,0 +1,98 @@
+autoInstallPeers: false
+dedupePeerDependents: true
+engineStrict: true
+saveExact: true
+strictPeerDependencies: true
+
+packages:
+  - packages/*
+  - tools/*
+  - examples/*
+
+catalog:
+  "@arethetypeswrong/cli": 0.18.4
+  "@changesets/cli": 2.31.0
+  "@commitlint/cli": 21.0.2
+  "@commitlint/config-conventional": 21.0.2
+  "@hono/node-server": 2.0.6
+  "@orpc/client": 2.0.0-beta.14
+  "@orpc/contract": 2.0.0-beta.14
+  "@orpc/server": 2.0.0-beta.14
+  "@prisma/adapter-pg": 7.8.0
+  "@prisma/client": 7.8.0
+  "@temporalio/client": 1.19.0
+  "@temporalio/common": 1.19.0
+  "@temporalio/worker": 1.19.0
+  "@temporalio/workflow": 1.19.0
+  "@testcontainers/postgresql": 12.0.4
+  "@testcontainers/rabbitmq": 12.0.4
+  "@types/amqplib": 0.10.8
+  "@types/node": 24.13.2
+  "@unthrown/orpc": 0.1.0
+  "@unthrown/prisma": 0.1.0
+  "@unthrown/vitest": 4.1.0
+  "@vitest/coverage-v8": 4.1.8
+  amqplib: 0.10.5
+  demesne: 0.1.0
+  hono: 4.12.27
+  knip: 6.20.0
+  lefthook: 2.1.9
+  oxfmt: 0.56.0
+  oxlint: 1.71.0
+  prisma: 7.8.0
+  publint: 0.3.21
+  testcontainers: 12.0.4
+  tsdown: 0.22.3
+  tsx: 4.22.4
+  turbo: 2.10.0
+  typedoc: 0.28.19
+  typedoc-plugin-markdown: 4.12.0
+  typescript: 6.0.3
+  unthrown: 4.1.0
+  vitest: 4.1.8
+  zod: 4.4.3
+
+peerDependencyRules:
+  allowedVersions:
+    # The published demesne@0.1.0 declares `unthrown ^3` as its peer, but its code is compatible
+    # with unthrown 4 (which btravstack start uses) — the range is stale metadata. Accept unthrown
+    # 4 for demesne's peer. Remove this once demesne is republished with an unthrown-4 peer range.
+    "demesne>unthrown": "4"
+  ignoreMissing:
+    # React peers of `@prisma/studio-core` (and the radix-ui internals it pulls in),
+    # brought in transitively by the `prisma` CLI (v7 bundles Prisma Studio). We never
+    # run `prisma studio`, so its GUI's React peers are irrelevant to the example.
+    - react
+    - react-dom
+    - "@types/react"
+
+allowBuilds:
+  # @swc/core (workflow bundling) and protobufjs come with @temporalio; their postinstall scripts
+  # are only source-build fallbacks — the platform-specific prebuilt binaries arrive as optional
+  # dependencies, so the live Worker (exercised by start-temporal-worker's integration test)
+  # works with the scripts blocked. cpu-features/ssh2 are testcontainers' optional SSH-tunnel
+  # accelerators — unused here.
+  "@prisma/engines": false
+  "@swc/core": false
+  cpu-features: false
+  esbuild: true
+  lefthook: true
+  prisma: true
+  protobufjs: false
+  ssh2: false
+
+# Supply-chain maturity delay: don't adopt a freshly published version until it has been on the
+# registry for 7 days (10080 minutes). Strict mode also validates the committed lockfile against
+# this cutoff. Trade-off: a `--frozen-lockfile` CI install can fail if a *locked* dep was
+# (re)published inside the window — mitigated by the exclude list below plus Dependabot's cooldown.
+minimumReleaseAge: 10080
+minimumReleaseAgeStrict: true
+# `demesne` and `unthrown` (+ its bridges) are sibling packages of btravstack start, shipping from
+# their own repos on their own cadence; a fresh release can be newer than the 7-day window.
+# Exclude them so the peers resolve, while the delay still guards everything else.
+minimumReleaseAgeExclude:
+  - demesne
+  - unthrown
+  - "@unthrown/orpc"
+  - "@unthrown/prisma"
+  - "@unthrown/vitest"
