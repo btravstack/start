@@ -76,8 +76,8 @@ catalogs:
       specifier: 0.10.5
       version: 0.10.5
     demesne:
-      specifier: 0.1.0
-      version: 0.1.0
+      specifier: 0.2.0
+      version: 0.2.0
     hono:
       specifier: 4.12.27
       version: 4.12.27
@@ -172,7 +172,7 @@ importers:
         version: 0.10.5
       demesne:
         specifier: 'catalog:'
-        version: 0.1.0(unthrown@4.1.0)
+        version: 0.2.0(unthrown@4.1.0)
       unthrown:
         specifier: 'catalog:'
         version: 4.1.0
@@ -212,7 +212,7 @@ importers:
         version: link:../../packages/start-kernel
       demesne:
         specifier: 'catalog:'
-        version: 0.1.0(unthrown@4.1.0)
+        version: 0.2.0(unthrown@4.1.0)
       unthrown:
         specifier: 'catalog:'
         version: 4.1.0
@@ -264,7 +264,7 @@ importers:
         version: 0.1.0(@prisma/client@7.8.0(prisma@7.8.0(magicast@0.5.3)(typescript@6.0.3))(typescript@6.0.3))
       demesne:
         specifier: 'catalog:'
-        version: 0.1.0(unthrown@4.1.0)
+        version: 0.2.0(unthrown@4.1.0)
       hono:
         specifier: 'catalog:'
         version: 4.12.27
@@ -322,7 +322,7 @@ importers:
         version: 1.19.0
       demesne:
         specifier: 'catalog:'
-        version: 0.1.0(unthrown@4.1.0)
+        version: 0.2.0(unthrown@4.1.0)
       unthrown:
         specifier: 'catalog:'
         version: 4.1.0
@@ -374,7 +374,7 @@ importers:
         version: 4.1.8(vitest@4.1.8)
       demesne:
         specifier: 'catalog:'
-        version: 0.1.0(unthrown@4.1.0)
+        version: 0.2.0(unthrown@4.1.0)
       publint:
         specifier: 'catalog:'
         version: 0.3.21
@@ -429,7 +429,7 @@ importers:
         version: 4.1.8(vitest@4.1.8)
       demesne:
         specifier: 'catalog:'
-        version: 0.1.0(unthrown@4.1.0)
+        version: 0.2.0(unthrown@4.1.0)
       publint:
         specifier: 'catalog:'
         version: 0.3.21
@@ -477,7 +477,7 @@ importers:
         version: 4.1.8(vitest@4.1.8)
       demesne:
         specifier: 'catalog:'
-        version: 0.1.0(unthrown@4.1.0)
+        version: 0.2.0(unthrown@4.1.0)
       publint:
         specifier: 'catalog:'
         version: 0.3.21
@@ -525,7 +525,7 @@ importers:
         version: 4.1.8(vitest@4.1.8)
       demesne:
         specifier: 'catalog:'
-        version: 0.1.0(unthrown@4.1.0)
+        version: 0.2.0(unthrown@4.1.0)
       publint:
         specifier: 'catalog:'
         version: 0.3.21
@@ -2728,11 +2728,11 @@ packages:
   defu@6.1.7:
     resolution: {integrity: sha512-7z22QmUWiQ/2d0KkdYmANbRUVABpZ9SNYyH5vx6PZ+nE5bcC0l7uFvEfHlyld/HcGBFTL536ClDt3DEcSlEJAQ==}
 
-  demesne@0.1.0:
-    resolution: {integrity: sha512-IocWMhu6TiHh1k4PwySpt03AWiVKkzBaDj4nAeRms9Qg0n/QO2UJETheu4krcSkbCAgGOIUfW0d+59OdVTRtug==}
+  demesne@0.2.0:
+    resolution: {integrity: sha512-nibme6/ipjEKLfm3UQVkCcHIgvwhkvqgZsuNdPjejN+3B6U5cL6huc6SD+VDHpWYsZm/fZBWSE7J5ACBtPRDoQ==}
     engines: {node: '>=22.19'}
     peerDependencies:
-      unthrown: ^3.0.0
+      unthrown: ^4.1.0
 
   denque@2.1.0:
     resolution: {integrity: sha512-HVQE3AAb/pxF8fQAoiqpvg9i3evqug3hoiwakOyZAwJm+6vZehbkYXZ0l4JxS+I3QxM97v5aaRNhj8v5oBhekw==}
@@ -6522,7 +6522,7 @@ snapshots:
 
   defu@6.1.7: {}
 
-  demesne@0.1.0(unthrown@4.1.0):
+  demesne@0.2.0(unthrown@4.1.0):
     dependencies:
       unthrown: 4.1.0
 

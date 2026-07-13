@@ -72,7 +72,7 @@
     "zod": "catalog:"
   },
   "peerDependencies": {
-    "demesne": "^0.1.0",
+    "demesne": "^0.2.0",
     "unthrown": "^4.1.0",
     "zod": "^4.0.0"
   },
