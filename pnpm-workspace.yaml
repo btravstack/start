@@ -33,7 +33,7 @@ catalog:
   "@unthrown/vitest": 4.1.0
   "@vitest/coverage-v8": 4.1.8
   amqplib: 0.10.5
-  demesne: 0.1.0
+  demesne: 0.2.0
   hono: 4.12.27
   knip: 6.20.0
   lefthook: 2.1.9
@@ -53,11 +53,6 @@ catalog:
   zod: 4.4.3
 
 peerDependencyRules:
-  allowedVersions:
-    # The published demesne@0.1.0 declares `unthrown ^3` as its peer, but its code is compatible
-    # with unthrown 4 (which btravstack start uses) — the range is stale metadata. Accept unthrown
-    # 4 for demesne's peer. Remove this once demesne is republished with an unthrown-4 peer range.
-    "demesne>unthrown": "4"
   ignoreMissing:
     # React peers of `@prisma/studio-core` (and the radix-ui internals it pulls in),
     # brought in transitively by the `prisma` CLI (v7 bundles Prisma Studio). We never
