@@ -35,7 +35,7 @@ catalog:
   amqplib: 0.10.5
   demesne: 0.2.0
   hono: 4.12.27
-  knip: 6.20.0
+  knip: 6.24.0
   lefthook: 2.1.9
   oxfmt: 0.56.0
   oxlint: 1.71.0
