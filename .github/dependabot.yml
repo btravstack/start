@@ -7,6 +7,9 @@ updates:
       interval: "weekly"
       day: "monday"
     groups:
+      oprc:
+        patterns:
+          - "@oprc/*"
       commitlint:
         patterns:
           - "@commitlint/*"
