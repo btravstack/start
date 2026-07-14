@@ -20,7 +20,6 @@
   "devDependencies": {
     "@btravstack/tsconfig": "workspace:*",
     "@testcontainers/rabbitmq": "catalog:",
-    "@types/amqplib": "catalog:",
     "@types/node": "catalog:",
     "tsx": "catalog:",
     "typescript": "catalog:",
