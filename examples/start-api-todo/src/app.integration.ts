@@ -15,8 +15,13 @@ const it = base.extend<{ app: BootedApp }>({
   // oxlint-disable-next-line no-empty-pattern
   app: async ({}, use) => {
     const app = await boot();
-    await use(app);
-    await app.close();
+    // `finally` so the listener is always torn down — even if the test (i.e. `use`) throws on an
+    // assertion failure or timeout, which would otherwise leak a running server into later tests.
+    try {
+      await use(app);
+    } finally {
+      await app.close();
+    }
   },
 });
 
