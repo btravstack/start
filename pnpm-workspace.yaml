@@ -32,7 +32,7 @@ catalog:
   "@unthrown/prisma": 0.1.0
   "@unthrown/vitest": 4.1.0
   "@vitest/coverage-v8": 4.1.8
-  amqplib: 0.10.5
+  amqplib: 2.0.1
   demesne: 0.2.0
   hono: 4.12.28
   knip: 6.25.0

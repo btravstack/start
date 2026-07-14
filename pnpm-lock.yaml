@@ -73,8 +73,8 @@ catalogs:
       specifier: 4.1.8
       version: 4.1.8
     amqplib:
-      specifier: 0.10.5
-      version: 0.10.5
+      specifier: 2.0.1
+      version: 2.0.1
     demesne:
       specifier: 0.2.0
       version: 0.2.0
@@ -169,7 +169,7 @@ importers:
         version: link:../../packages/start-kernel
       amqplib:
         specifier: 'catalog:'
-        version: 0.10.5
+        version: 2.0.1
       demesne:
         specifier: 'catalog:'
         version: 0.2.0(unthrown@4.1.0)
@@ -556,10 +556,6 @@ importers:
   tools/typedoc: {}
 
 packages:
-
-  '@acuminous/bitsyntax@0.1.2':
-    resolution: {integrity: sha512-29lUK80d1muEQqiUsSo+3A0yP6CdspgC95EnKBMi22Xlwt79i/En4Vr67+cXhU+cZjbti3TgGGC5wy1stIywVQ==}
-    engines: {node: '>=0.8'}
 
   '@andrewbranch/untar.js@1.0.3':
     resolution: {integrity: sha512-Jh15/qVmrLGhkKJBdXlK1+9tY4lZruYjsgkDFj08ZmDiWVBLJcqkok7Z0/R0In+i1rScBpJlSvrTS2Lm41Pbnw==}
@@ -2355,9 +2351,9 @@ packages:
   ajv@8.20.0:
     resolution: {integrity: sha512-Thbli+OlOj+iMPYFBVBfJ3OmCAnaSyNn4M1vz9T6Gka5Jt9ba/HIR56joy65tY6kx/FCF5VXNB819Y7/GUrBGA==}
 
-  amqplib@0.10.5:
-    resolution: {integrity: sha512-Dx5zmy0Ur+Q7LPPdhz+jx5IzmJBoHd15tOeAfQ8SuvEtyPJ20hBemhOBA4b1WeORCRa0ENM/kHCzmem1w/zHvQ==}
-    engines: {node: '>=10'}
+  amqplib@2.0.1:
+    resolution: {integrity: sha512-a3P2MgfCf9nzVis12VxWEn0dS6hcqve7dlEAhXDtIWR27BlhtMkILOc+H9aeHjDi6i6r94dYKc2Kx2OFe3avvg==}
+    engines: {node: '>=18'}
 
   ansi-colors@4.1.3:
     resolution: {integrity: sha512-/6w/C21Pm1A7aZitlI5Ni/2J6FFQN8i1Cvz3kHABAAbw93v/NlvKdVOqz7CCWz/3iv/JplRSEEZ83XION15ovw==}
@@ -2537,9 +2533,6 @@ packages:
 
   buffer-from@1.1.2:
     resolution: {integrity: sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ==}
-
-  buffer-more-ints@1.0.0:
-    resolution: {integrity: sha512-EMetuGFz5SLsT0QTnXzINh4Ksr+oo4i+UGTXEshiGCQWnsgSs7ZhJ8fzlwQ+OzEMs0MpDAMr1hxnblp5a4vcHg==}
 
   buffer@5.7.1:
     resolution: {integrity: sha512-EHcyIPBQ4BSGlvjB16k5KgAJ27CIsHY/2JBmCRReo48y9rQ3MaUzWX3KVlBa4U7MyX02HdVj0K7C3WaB3ju7FQ==}
@@ -3818,9 +3811,6 @@ packages:
   quansync@1.0.0:
     resolution: {integrity: sha512-5xZacEEufv3HSTPQuchrvV6soaiACMFnq1H8wkVioctoH3TRha9Sz66lOxRwPK/qZj7HPiSveih9yAyh98gvqA==}
 
-  querystringify@2.2.0:
-    resolution: {integrity: sha512-FIqgj2EUvTa7R50u0rGsyTftzjYmv/a3hO345bZNrqabNqjtgiDMgmo4mkUjd+nzU5oF3dClKqFIPUKybUyqoQ==}
-
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
 
@@ -3863,9 +3853,6 @@ packages:
   require-from-string@2.0.2:
     resolution: {integrity: sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw==}
     engines: {node: '>=0.10.0'}
-
-  requires-port@1.0.0:
-    resolution: {integrity: sha512-KigOCHcocU3XODJxsu8i/j8T9tzT4adHiecwORRQ0ZZFcp7ahwXuRU1m+yuO90C5ZUyGeGfocHDI14M3L3yDAQ==}
 
   resolve-from@4.0.0:
     resolution: {integrity: sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g==}
@@ -4286,9 +4273,6 @@ packages:
     peerDependencies:
       browserslist: '>= 4.21.0'
 
-  url-parse@1.5.10:
-    resolution: {integrity: sha512-WypcfiRhfeUP9vvF0j6rw0J3hrWrw6iZv3+22h6iRMJ/8z1Tj6XfLP4DsUix5MhMPnXpiHDoKyoZ/bdCkwBCiQ==}
-
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
@@ -4486,14 +4470,6 @@ packages:
     resolution: {integrity: sha512-ytENFjIJFl2UwYglde2jchW2Hwm4GJFLDiSXWdTrJQBIN9Fcyp7n4DhxJEiWNAJMV1/BqWfW/kkg71UDcHJyTQ==}
 
 snapshots:
-
-  '@acuminous/bitsyntax@0.1.2':
-    dependencies:
-      buffer-more-ints: 1.0.0
-      debug: 4.4.3
-      safe-buffer: 5.1.2
-    transitivePeerDependencies:
-      - supports-color
 
   '@andrewbranch/untar.js@1.0.3': {}
 
@@ -6168,13 +6144,7 @@ snapshots:
       json-schema-traverse: 1.0.0
       require-from-string: 2.0.2
 
-  amqplib@0.10.5:
-    dependencies:
-      '@acuminous/bitsyntax': 0.1.2
-      buffer-more-ints: 1.0.0
-      url-parse: 1.5.10
-    transitivePeerDependencies:
-      - supports-color
+  amqplib@2.0.1: {}
 
   ansi-colors@4.1.3: {}
 
@@ -6338,8 +6308,6 @@ snapshots:
   buffer-crc32@1.0.0: {}
 
   buffer-from@1.1.2: {}
-
-  buffer-more-ints@1.0.0: {}
 
   buffer@5.7.1:
     dependencies:
@@ -7561,8 +7529,6 @@ snapshots:
 
   quansync@1.0.0: {}
 
-  querystringify@2.2.0: {}
-
   queue-microtask@1.2.3: {}
 
   radash@12.1.1: {}
@@ -7614,8 +7580,6 @@ snapshots:
   require-directory@2.1.1: {}
 
   require-from-string@2.0.2: {}
-
-  requires-port@1.0.0: {}
 
   resolve-from@4.0.0: {}
 
@@ -8050,11 +8014,6 @@ snapshots:
       browserslist: 4.28.4
       escalade: 3.2.0
       picocolors: 1.1.1
-
-  url-parse@1.5.10:
-    dependencies:
-      querystringify: 2.2.0
-      requires-port: 1.0.0
 
   util-deprecate@1.0.2: {}
 
