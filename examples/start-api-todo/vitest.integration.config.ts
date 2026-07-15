@@ -8,6 +8,9 @@ export default defineConfig({
   test: {
     environment: "node",
     include: ["src/**/*.integration.ts"],
+    // Each boot stubs PORT/LOG_LEVEL via `vi.stubEnv`; restore them before every test so config
+    // never leaks across tests or files and failures stay order-independent.
+    unstubEnvs: true,
     pool: "forks",
     testTimeout: 240_000,
     hookTimeout: 300_000,
