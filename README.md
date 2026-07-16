@@ -7,6 +7,8 @@
 
 Incubating. All packages are currently `private` while the API settles.
 
+**Docs:** https://btravstack.github.io/start/
+
 ## The idea
 
 Your application is a **demesne graph** — pure use cases behind ports, adapters wired at the

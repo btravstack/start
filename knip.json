@@ -17,6 +17,9 @@
     "examples/start-temporal-worker": {
       "project": ["src/**/*.ts"],
       "entry": ["src/workflow.ts"]
+    },
+    "docs": {
+      "project": [".vitepress/**/*.ts"]
     }
   }
 }

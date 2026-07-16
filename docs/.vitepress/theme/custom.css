@@ -1,0 +1,77 @@
+/* start accent — cyan. The shared @btravstack/theme derives every accent
+ * shade (deep/hover/soft/washes/hero glow/feature icons/AA text) from this
+ * single token. */
+:root {
+  --accent: #22b8cf;
+}
+
+/* Hero name in the package accent — the BtravStack multi-accent rule: the
+ * canvas stays neutral, the product glows in its own color (AA via
+ * --text-accent, which darkens on light). */
+:root:root {
+  --vp-home-hero-name-color: var(--text-accent);
+}
+
+/* Home-hero background glyph — the project's motif behind the hero (a play
+ * button and a launch trajectory: start). Painted in --accent through a mask,
+ * so it always tracks the accent token; the SVG is base64-encoded so no CSS
+ * minifier can mangle it. */
+.VPHome {
+  position: relative;
+  /* content-column width, and the gutter from the viewport edge in to it —
+     defined once so the glow and glyph stay anchored to the same column. */
+  --btv-col: 1152px;
+  --btv-gutter: max(0px, calc((100% - var(--btv-col)) / 2));
+}
+.VPHome::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: var(--btv-gutter);
+  right: var(--btv-gutter);
+  aspect-ratio: 500 / 300;
+  background-color: var(--accent);
+  -webkit-mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MDAgMzAwIiBmaWxsPSJub25lIj48cGF0aCBkPSJNMzAsMjQwIEg1MDAiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PGNpcmNsZSBjeD0iMTQwIiBjeT0iMTUwIiByPSI3MCIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNMTE4LDExMiBMMTg4LDE1MCBMMTE4LDE4OCBaIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMiIvPjxwYXRoIGQ9Ik0yNDAsMjM2IEMzMjAsMjEwIDM5MCwxNTAgNDU4LDY0IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWRhc2hhcnJheT0iMTAgMTIiLz48cGF0aCBkPSJNNDQ2LDg2IEw0NjQsNTYgTTQzNCw2NCBMNDY4LDc2IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMiIvPjwvc3ZnPgo=")
+    no-repeat top center / contain;
+  mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MDAgMzAwIiBmaWxsPSJub25lIj48cGF0aCBkPSJNMzAsMjQwIEg1MDAiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PGNpcmNsZSBjeD0iMTQwIiBjeT0iMTUwIiByPSI3MCIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNMTE4LDExMiBMMTg4LDE1MCBMMTE4LDE4OCBaIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMiIvPjxwYXRoIGQ9Ik0yNDAsMjM2IEMzMjAsMjEwIDM5MCwxNTAgNDU4LDY0IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWRhc2hhcnJheT0iMTAgMTIiLz48cGF0aCBkPSJNNDQ2LDg2IEw0NjQsNTYgTTQzNCw2NCBMNDY4LDc2IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMiIvPjwvc3ZnPgo=")
+    no-repeat top center / contain;
+  opacity: 0.13;
+  pointer-events: none;
+  z-index: 0;
+}
+@media (max-width: 768px) {
+  .VPHome::after {
+    display: none;
+  }
+}
+
+/* The shared theme only enlarges the hero mark at >=960px; below that the
+ * mark's small intrinsic size leaves it tiny, so size it up for tablet/mobile
+ * too. */
+@media (max-width: 959px) {
+  .VPHero .image-src {
+    width: min(208px, 62vw);
+    height: min(208px, 62vw);
+    object-fit: contain;
+  }
+}
+
+/* Under-construction strip — the worker beet on site beneath the hero. */
+.btv-wip {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 12px 0 28px;
+  padding: 16px 20px;
+  border: 1.5px dashed color-mix(in srgb, var(--accent) 40%, transparent);
+  border-radius: 14px;
+}
+.btv-wip img {
+  flex: none;
+  width: 64px;
+  height: 72px;
+}
+.btv-wip p {
+  margin: 0;
+  line-height: 1.55;
+}
