@@ -94,3 +94,12 @@ minimumReleaseAgeExclude:
   - "@unthrown/orpc"
   - "@unthrown/prisma"
   - "@unthrown/vitest"
+
+# Audit exceptions. GHSA-fx2h-pf6j-xcff: `vite server.fs.deny` bypass on Windows alternate
+# paths — a dev-server-only issue reached through the docs site's dev tooling
+# (docs > vitepress > vite). The docs are statically built in CI on Linux and served by GitHub
+# Pages; `vite dev` never runs in any deployed or CI context. Drop when vitepress ships a
+# patched vite.
+auditConfig:
+  ignoreGhsas:
+    - GHSA-fx2h-pf6j-xcff
