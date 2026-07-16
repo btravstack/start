@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 2 118 132" width="106" height="119" fill="none">
+  <!-- shovel: T-grip, handle, blade — planted in the mound -->
+  <g>
+    <path d="M99,46 L86,108" stroke="#B08050" stroke-width="6" stroke-linecap="round"/>
+    <g transform="rotate(-12 99 44)"><rect x="90" y="40" width="18" height="8" rx="4" fill="#B08050"/></g>
+    <path d="M79,102 L96,98 C104,108 101,122 90,126 C81,120 78,111 79,102 Z" fill="#A7AFB9"/>
+  </g>
+  <!-- dirt mound + flying flecks -->
+  <path d="M62,127 Q84,110 108,127 L108,130 L62,130 Z" fill="#8A5A36"/>
+  <circle cx="72" cy="100" r="2.6" fill="#8A5A36"/>
+  <circle cx="103" cy="92" r="2" fill="#8A5A36"/>
+  <circle cx="94" cy="84" r="1.6" fill="#8A5A36"/>
+  <!-- body -->
+  <path d="M50,32 C28,31 14,45 14,62 C14,81 30,98 44,108 C47,111 48,114 50,116 C52,114 53,111 56,108 C70,98 86,81 86,62 C86,45 72,31 50,32 Z" fill="#CE3D80"/>
+  <path d="M63,35 C76,41 86,50 86,62 C86,79 73,94 58,106 C69,91 78,76 78,62 C78,51 72,42 63,35 Z" fill="#8E1A52" opacity="0.85"/>
+  <!-- tail -->
+  <path d="M50,116 C49,121 52,124 49,129 C47,132 44,132 43,130" stroke="#8E1A52" stroke-width="2.8" stroke-linecap="round" fill="none"/>
+  <!-- leaves squeezed out under the hat brim -->
+  <path d="M22,34 C17,30 10,29 6,32 C3,35 5,40 11,40 C15,40 19,37 22,34 Z" fill="#2C8B4E"/>
+  <path d="M78,34 C83,29 90,28 94,31 C97,34 95,39 89,40 C85,40 81,37 78,34 Z" fill="#3DAE62"/>
+  <!-- hard hat -->
+  <path d="M29,32 C29,13 71,13 71,32 Z" fill="#F7C948"/>
+  <rect x="44" y="9" width="12" height="8" rx="4" fill="#DFA81E"/>
+  <rect x="21" y="30" width="58" height="8" rx="4" fill="#DFA81E"/>
+  <!-- arms: left akimbo, right gripping the handle -->
+  <g transform="rotate(-30 22 76)"><rect x="0" y="72" width="20" height="9" rx="4.5" fill="#CE3D80"/></g>
+  <g transform="rotate(-9 74 64)"><rect x="70" y="59" width="26" height="9" rx="4.5" fill="#CE3D80"/></g>
+  <circle cx="95" cy="59" r="5" fill="#CE3D80"/>
+  <!-- face -->
+  <path d="M27,47 C23,53 22,61 24,68" stroke="#EE9CC4" stroke-width="3.4" stroke-linecap="round" fill="none" opacity="0.55"/>
+  <circle cx="38" cy="60" r="5.2" fill="#3A0D24"/>
+  <circle cx="39.7" cy="58.3" r="1.8" fill="#FFFFFF"/>
+  <circle cx="63" cy="60" r="5.2" fill="#3A0D24"/>
+  <circle cx="64.7" cy="58.3" r="1.8" fill="#FFFFFF"/>
+  <path d="M41,71 Q50.5,80 60,71" stroke="#3A0D24" stroke-width="3.4" stroke-linecap="round" fill="none"/>
+  <circle cx="29" cy="69" r="4.2" fill="#EE9CC4" opacity="0.75"/>
+  <circle cx="72" cy="69" r="4.2" fill="#EE9CC4" opacity="0.75"/>
+</svg>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-8 -14 116 170" width="98" height="144" fill="none">
+  <!-- ion exhaust: puffs trailing below -->
+  <circle cx="36" cy="140" r="4" fill="#1795AB" opacity="0.45"/>
+  <circle cx="64" cy="146" r="3" fill="#1795AB" opacity="0.35"/>
+  <circle cx="50" cy="154" r="2.4" fill="#1795AB" opacity="0.25"/>
+  <!-- speed lines -->
+  <path d="M2,74 L2,102" stroke="#1795AB" stroke-width="5" stroke-linecap="round" opacity="0.6"/>
+  <path d="M98,80 L98,108" stroke="#1795AB" stroke-width="5" stroke-linecap="round" opacity="0.6"/>
+  <!-- crown: stem + center leaf, two side leaves -->
+  <path d="M50,34 C49,26 49,18 51,10" stroke="#2C8B4E" stroke-width="3.6" stroke-linecap="round" fill="none"/>
+  <path d="M51,10 C44,7 41,-2 47,-6 C54,-10 60,-3 58,3 C57,7 55,9 51,10 Z" fill="#3DAE62"/>
+  <path d="M42,36 C35,31 27,30 22,34 C17,38 20,45 27,45 C33,45 39,41 42,36 Z" fill="#2C8B4E"/>
+  <path d="M58,36 C65,31 73,30 78,34 C83,38 80,45 73,45 C67,45 61,41 58,36 Z" fill="#3DAE62"/>
+  <!-- arms thrown up -->
+  <g transform="rotate(-52 14 66)"><rect x="2" y="62" width="20" height="9" rx="4.5" fill="#CE3D80"/></g>
+  <g transform="rotate(52 86 66)"><rect x="78" y="66" width="18" height="9" rx="4.5" fill="#8E1A52"/></g>
+  <!-- ion flame at the tail -->
+  <path d="M50,110 C62,118 64,132 50,150 C36,132 38,118 50,110 Z" fill="#1795AB"/>
+  <path d="M50,116 C57,122 58,131 50,141 C42,131 43,122 50,116 Z" fill="#63CBDD"/>
+  <circle cx="50" cy="124" r="3" fill="#FFFFFF"/>
+  <!-- body -->
+  <path d="M50,32 C28,31 14,45 14,62 C14,81 30,98 44,108 C47,111 48,114 50,116 C52,114 53,111 56,108 C70,98 86,81 86,62 C86,45 72,31 50,32 Z" fill="#CE3D80"/>
+  <path d="M63,35 C76,41 86,50 86,62 C86,79 73,94 58,106 C69,91 78,76 78,62 C78,51 72,42 63,35 Z" fill="#8E1A52" opacity="0.85"/>
+  <!-- face: thrilled -->
+  <path d="M27,47 C23,53 22,61 24,68" stroke="#EE9CC4" stroke-width="3.4" stroke-linecap="round" fill="none" opacity="0.55"/>
+  <circle cx="38" cy="60" r="5.2" fill="#3A0D24"/>
+  <circle cx="39.7" cy="58.3" r="1.8" fill="#FFFFFF"/>
+  <circle cx="63" cy="60" r="5.2" fill="#3A0D24"/>
+  <circle cx="64.7" cy="58.3" r="1.8" fill="#FFFFFF"/>
+  <path d="M40,70 Q50.5,82 61,70" stroke="#3A0D24" stroke-width="3.4" stroke-linecap="round" fill="none"/>
+  <circle cx="29" cy="69" r="4.2" fill="#EE9CC4" opacity="0.75"/>
+  <circle cx="72" cy="69" r="4.2" fill="#EE9CC4" opacity="0.75"/>
+</svg>

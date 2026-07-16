@@ -36,6 +36,10 @@
       "dependsOn": ["^build"],
       "outputs": ["dist/**"]
     },
+    "@btravstack/start-docs#build": {
+      "dependsOn": ["^build"],
+      "outputs": [".vitepress/dist/**"]
+    },
     "build:docs": {
       "dependsOn": ["^build"],
       "outputs": ["docs/**"]

@@ -8,9 +8,11 @@ packages:
   - packages/*
   - tools/*
   - examples/*
+  - docs
 
 catalog:
   "@arethetypeswrong/cli": 0.18.4
+  "@btravstack/theme": 1.6.1
   "@changesets/cli": 2.31.0
   "@commitlint/cli": 21.2.0
   "@commitlint/config-conventional": 21.2.0
@@ -48,6 +50,7 @@ catalog:
   typedoc-plugin-markdown: 4.12.0
   typescript: 6.0.3
   unthrown: 4.1.0
+  vitepress: 1.6.4
   vitest: 4.1.8
   zod: 4.4.3
 
@@ -85,8 +88,18 @@ minimumReleaseAgeStrict: true
 # their own repos on their own cadence; a fresh release can be newer than the 7-day window.
 # Exclude them so the peers resolve, while the delay still guards everything else.
 minimumReleaseAgeExclude:
+  - "@btravstack/theme"
   - demesne
   - unthrown
   - "@unthrown/orpc"
   - "@unthrown/prisma"
   - "@unthrown/vitest"
+
+# Audit exceptions. GHSA-fx2h-pf6j-xcff: `vite server.fs.deny` bypass on Windows alternate
+# paths — a dev-server-only issue reached through the docs site's dev tooling
+# (docs > vitepress > vite). The docs are statically built in CI on Linux and served by GitHub
+# Pages; `vite dev` never runs in any deployed or CI context. Drop when vitepress ships a
+# patched vite.
+auditConfig:
+  ignoreGhsas:
+    - GHSA-fx2h-pf6j-xcff
