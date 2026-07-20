@@ -64,9 +64,10 @@ overrides:
   "brace-expansion@2": "2.1.2"
   # GHSA-fx2h-pf6j-xcff: vite `server.fs.deny` bypass (dev-server only; the docs
   # ship as static HTML). Reaches us via docs > vitepress > vite. vitepress 1.6.x
-  # pins vite ^5.4.14 and 5.x has no patched release, so pull vite up to 6.4.3
-  # (the first fixed version) — the docs `vitepress build` is verified against it.
-  vite: 6.4.3
+  # pins vite ^5.4.14 and 5.x has no patched release, so lift any pre-6.4.3 vite
+  # to 6.4.3 (the first fixed version) — the docs `vitepress build` is verified
+  # against it.
+  "vite@<6.4.3": "6.4.3"
   # GHSA-92pp-h63x-v22m: @hono/node-server request smuggling in the 1.x line,
   # pulled in by the `prisma` CLI's dev server (@prisma/dev). 1.19.13 is the
   # patched 1.x release. (Our own workspace dep on @hono/node-server is 2.x.)

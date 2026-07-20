@@ -135,7 +135,7 @@ catalogs:
 
 overrides:
   brace-expansion@2: 2.1.2
-  vite: 6.4.3
+  vite@<6.4.3: 6.4.3
   '@hono/node-server@1': 1.19.13
 
 importers:
