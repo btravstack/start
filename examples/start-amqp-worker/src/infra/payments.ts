@@ -5,9 +5,9 @@
 import { Layer } from "demesne";
 import { Err, Ok } from "unthrown";
 
+import { Payments } from "../application/ports.js";
 import { Config } from "../config.js";
 import { PaymentDeclined } from "../domain.js";
-import { Payments } from "../application/ports.js";
 
 let counter = 0;
 

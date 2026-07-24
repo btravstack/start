@@ -4,9 +4,9 @@
 import { Layer } from "demesne";
 import { Err, Ok } from "unthrown";
 
+import { Logger, TodoRepository } from "../application/ports.js";
 import { Config } from "../config.js";
 import { type Todo, TodoNotFound } from "../domain.js";
-import { Logger, TodoRepository } from "../application/ports.js";
 
 export const LoggerLive = Layer.inject(Logger, { config: Config }, ({ config }) => ({
   info: (msg) => {

@@ -8,8 +8,8 @@ import { Layer } from "demesne";
 
 import { bootstrap } from "./bootstrap.js";
 import { ConfigLive } from "./config.js";
-import { toApplicationFailures } from "./infra/temporal.js";
 import { PaymentsLive } from "./infra/payments.js";
+import { toApplicationFailures } from "./infra/temporal.js";
 import { workflowsPath } from "./workflows-path.js";
 
 const built = await Layer.build(Layer.provideTo(bootstrap(PaymentsLive), ConfigLive));

@@ -56,8 +56,8 @@
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "catalog:",
-    "@btravstack/tsconfig": "workspace:*",
-    "@btravstack/typedoc": "workspace:*",
+    "@btravstack/tsconfig": "catalog:",
+    "@btravstack/typedoc": "catalog:",
     "@types/node": "catalog:",
     "@unthrown/vitest": "catalog:",
     "@vitest/coverage-v8": "catalog:",

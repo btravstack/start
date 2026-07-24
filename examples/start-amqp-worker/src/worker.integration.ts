@@ -1,3 +1,5 @@
+import { runConsumer } from "@btravstack/start-amqp";
+import { runHost } from "@btravstack/start-kernel";
 // Integration: the WHOLE consumer against a real RabbitMQ (testcontainers), through the REAL
 // amqplib driver — the exact wiring `server.ts` runs. A publisher connection pushes messages onto
 // the queue; the consumer must pick them up, run the demesne-wired handler, and settle them:
@@ -6,16 +8,14 @@
 //   • a malformed body → ContractError → dead-letter           (poison message, no loop)
 // A requeue-loop bug would keep messageCount > 0 — the drain assertions are the regression net.
 import { RabbitMQContainer, type StartedRabbitMQContainer } from "@testcontainers/rabbitmq";
-import { runHost } from "@btravstack/start-kernel";
-import { runConsumer } from "@btravstack/start-amqp";
-import { Layer } from "demesne";
 import * as amqplib from "amqplib";
+import { Layer } from "demesne";
 import { fromSafePromise } from "unthrown";
 import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
 
 import { bootstrap } from "./bootstrap.js";
-import { CHARGE_QUEUE } from "./consumer.js";
 import { ConfigLive } from "./config.js";
+import { CHARGE_QUEUE } from "./consumer.js";
 import { type AmqpConnection, createAmqpDriver } from "./infra/amqp-driver.js";
 import { PaymentsLive } from "./infra/payments.js";
 

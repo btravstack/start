@@ -1,3 +1,7 @@
+import { ActivityRegistry } from "@btravstack/start-temporal";
+import { Client, Connection } from "@temporalio/client";
+import { NativeConnection, Worker } from "@temporalio/worker";
+import { Layer } from "demesne";
 // Integration: the WHOLE worker against a real Temporal dev server (testcontainers, the
 // `temporalio/temporal` CLI image running `server start-dev`). The REAL @temporalio Worker is
 // created exactly as `worker.ts` does — demesne-built activity registry, ApplicationFailure
@@ -7,17 +11,13 @@
 //   • an over-limit    → PaymentDeclined → non-retryable ApplicationFailure → workflow FAILS
 //     immediately (no retry storm), surfacing the domain reason
 import { GenericContainer, type StartedTestContainer } from "testcontainers";
-import { Client, Connection } from "@temporalio/client";
-import { NativeConnection, Worker } from "@temporalio/worker";
-import { Layer } from "demesne";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 
-import { ActivityRegistry } from "@btravstack/start-temporal";
 import { bootstrap } from "./bootstrap.js";
 import { ConfigLive } from "./config.js";
 import type { ChargeCommand, Receipt } from "./domain.js";
-import { toApplicationFailures } from "./infra/temporal.js";
 import { PaymentsLive } from "./infra/payments.js";
+import { toApplicationFailures } from "./infra/temporal.js";
 import { workflowsPath } from "./workflows-path.js";
 
 type OrderWorkflow = (command: ChargeCommand) => Promise<Receipt>;
