@@ -1,32 +1,16 @@
 name: CI
-
 permissions:
   contents: read
-
 on:
   push:
     branches: [main]
   pull_request:
     branches: [main]
-
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
-
 jobs:
   ci:
-    uses: btravstack/config/.github/workflows/ci-reusable.yml@main
+    uses: btravstack/config/.github/workflows/ci-reusable.yml@workflows-v1
     with:
       changeset: true
-      knip: false
-
-  knip:
-    name: Knip
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
-      - uses: ./.github/actions/setup
-      # knip resolves the example's `../generated/prisma/client.ts` import; generate it explicitly.
-      - name: Generate the Prisma client
-        run: pnpm --filter @btravstack-examples/start-orpc-prisma run prisma:generate
-      - run: pnpm exec knip --reporter github-actions
