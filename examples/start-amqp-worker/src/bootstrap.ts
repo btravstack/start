@@ -2,7 +2,7 @@
 // server passes the real adapter, a test passes a fake with scripted failures. Composed by hand.
 import { Layer } from "demesne";
 
-import { Payments } from "./application/ports.js";
+import { type Payments } from "./application/ports.js";
 import { ChargeOrderLive } from "./application/use-cases.js";
 import { ConsumerLive } from "./consumer.js";
 import { LoggerLive } from "./infra/logger.js";
