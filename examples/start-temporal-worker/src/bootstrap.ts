@@ -3,7 +3,7 @@
 import { Layer } from "demesne";
 
 import { ActivitiesLive } from "./activities.js";
-import { Payments } from "./application/ports.js";
+import { type Payments } from "./application/ports.js";
 import { ChargeOrderLive } from "./application/use-cases.js";
 import { LoggerLive } from "./infra/logger.js";
 

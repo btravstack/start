@@ -3,7 +3,7 @@
 // Logger + TodoRepository; the oRPC app reads the wired use cases. Composed by hand.
 import { Layer } from "demesne";
 
-import { TodoRepository } from "./application/ports.js";
+import { type TodoRepository } from "./application/ports.js";
 import { CreateTodoLive, GetTodoLive, ListTodosLive } from "./application/use-cases.js";
 import { HttpAppLive } from "./http/router.js";
 import { LoggerLive } from "./infra/logger.js";

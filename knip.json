@@ -2,7 +2,7 @@
   "$schema": "https://unpkg.com/knip@6/schema.json",
   "ignoreExportsUsedInFile": true,
   "ignore": ["**/*.test-d.ts"],
-  "ignoreDependencies": ["@btravstack/oxlint"],
+  "ignoreDependencies": ["@btravstack/lefthook", "@btravstack/oxlint"],
   "workspaces": {
     "packages/*": {
       "project": ["src/**/*.ts"],

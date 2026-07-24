@@ -4,7 +4,7 @@
 // the wired use cases. Composed by hand with `merge` / `provideTo` — no auto-wiring.
 import { Layer } from "demesne";
 
-import { TodoRepository } from "./application/ports.js";
+import { type TodoRepository } from "./application/ports.js";
 import { CreateTodoLive, GetTodoLive, ListTodosLive } from "./application/use-cases.js";
 import { HttpAppLive } from "./http/routes.js";
 import { LoggerLive } from "./infra/adapters.js";
