@@ -5,8 +5,8 @@
 import { httpListener, ListenConfig } from "@btravstack/start-api";
 import { Layer } from "demesne";
 
-import { Config, ConfigLive } from "./config.js";
 import { bootstrap } from "./bootstrap.js";
+import { Config, ConfigLive } from "./config.js";
 import { TodoRepoLive } from "./infra/adapters.js";
 
 const ListenConfigLive = Layer.inject(ListenConfig, { config: Config }, ({ config }) => ({

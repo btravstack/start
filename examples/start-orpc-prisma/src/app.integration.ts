@@ -5,12 +5,12 @@
 // closes, Prisma disconnects and the port stops accepting.
 import { execFileSync } from "node:child_process";
 
-import { PostgreSqlContainer, type StartedPostgreSqlContainer } from "@testcontainers/postgresql";
 import { HttpServer } from "@btravstack/start-api";
 import { runHost } from "@btravstack/start-kernel";
 import { createORPCClient } from "@orpc/client";
 import { RPCLink } from "@orpc/client/fetch";
 import type { RouterClient } from "@orpc/server";
+import { PostgreSqlContainer, type StartedPostgreSqlContainer } from "@testcontainers/postgresql";
 import { createResultClient } from "@unthrown/orpc/client";
 import { fromSafePromise } from "unthrown";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";

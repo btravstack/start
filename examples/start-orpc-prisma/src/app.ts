@@ -5,8 +5,8 @@
 import { httpListener, ListenConfig } from "@btravstack/start-api";
 import { Layer } from "demesne";
 
-import { Config, ConfigLive } from "./config.js";
 import { bootstrap } from "./bootstrap.js";
+import { Config, ConfigLive } from "./config.js";
 import { DatabaseLive } from "./infra/prisma.js";
 import { TodoRepoLive } from "./infra/todo-repository.js";
 

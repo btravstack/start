@@ -4,9 +4,9 @@
 // `$extends`ed with `@unthrown/prisma` so every query returns an `AsyncResult` (the `try*` methods)
 // whose error channel is the P-codes it can hit.
 import { PrismaPg } from "@prisma/adapter-pg";
+import { unthrownPrisma } from "@unthrown/prisma";
 import { type Context, Layer, Tag } from "demesne";
 import { fromPromise, TaggedError } from "unthrown";
-import { unthrownPrisma } from "@unthrown/prisma";
 
 import { Config, type ConfigId } from "../config.js";
 import { PrismaClient } from "../generated/prisma/client.ts";

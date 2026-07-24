@@ -20,7 +20,7 @@
     "zod": "catalog:"
   },
   "devDependencies": {
-    "@btravstack/tsconfig": "workspace:*",
+    "@btravstack/tsconfig": "catalog:",
     "@temporalio/client": "catalog:",
     "@types/node": "catalog:",
     "testcontainers": "catalog:",

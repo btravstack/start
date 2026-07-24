@@ -1,20 +1,18 @@
-// End-to-end test with NO database. It goes through the SAME `bootstrap` as the server, swapping
-// only the repository for an in-memory fake (the port drops in without Prisma/Postgres). It drives
-// the real app through a TYPED oRPC client whose fetch loops straight back into the Hono app — a
-// genuine request/response cycle, JSON serialization and typed-error inference included, without a
-// socket.
-import { describe, expect, it } from "vitest";
-
+import { HttpApp } from "@btravstack/start-api";
 // Registers the Result / AsyncResult matchers.
 import "@unthrown/vitest";
-
-import { HttpApp } from "@btravstack/start-api";
 import { createORPCClient } from "@orpc/client";
 import { RPCLink } from "@orpc/client/fetch";
 import type { RouterClient } from "@orpc/server";
 import { createResultClient } from "@unthrown/orpc/client";
 import { Layer, type ServiceOf } from "demesne";
 import { Err, Ok } from "unthrown";
+// End-to-end test with NO database. It goes through the SAME `bootstrap` as the server, swapping
+// only the repository for an in-memory fake (the port drops in without Prisma/Postgres). It drives
+// the real app through a TYPED oRPC client whose fetch loops straight back into the Hono app — a
+// genuine request/response cycle, JSON serialization and typed-error inference included, without a
+// socket.
+import { describe, expect, it } from "vitest";
 
 import { TodoRepository } from "./application/ports.js";
 import { bootstrap } from "./bootstrap.js";

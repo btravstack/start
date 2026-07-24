@@ -6,16 +6,18 @@ strictPeerDependencies: true
 
 packages:
   - packages/*
-  - tools/*
   - examples/*
   - docs
 
 catalog:
   "@arethetypeswrong/cli": 0.18.5
+  "@btravstack/commitlint": 0.1.0
+  "@btravstack/oxlint": 0.1.0
   "@btravstack/theme": 1.7.0
+  "@btravstack/tsconfig": 0.1.0
+  "@btravstack/typedoc": 0.1.0
   "@changesets/cli": 2.31.0
   "@commitlint/cli": 21.2.1
-  "@commitlint/config-conventional": 21.2.0
   "@hono/node-server": 2.0.8
   "@orpc/client": 2.0.0-beta.15
   "@orpc/contract": 2.0.0-beta.15
@@ -59,6 +61,11 @@ catalog:
 # tooling; each override pulls the dep to its first fixed release without
 # disturbing unrelated version lines.
 overrides:
+  # GHSA-v2hh-gcrm-f6hx (High): fast-uri host confusion via literal backslash
+  # authority delimiter. Only the vulnerable <3.1.4 line is present (transitive,
+  # dev/build tooling); 3.1.4 is the first patched release. Newly disclosed.
+  # fast-uri is added to minimumReleaseAgeExclude below (3.1.4 is <7 days old).
+  "fast-uri@<3.1.4": "3.1.4"
   # GHSA-3jxr-9vmj-r5cp: brace-expansion ReDoS. The vulnerable 2.x line reaches us
   # via testcontainers > archiver > glob > minimatch; 2.1.2 is the patched release.
   "brace-expansion@2": "2.1.2"
@@ -109,7 +116,15 @@ minimumReleaseAgeStrict: true
 # their own repos on their own cadence; a fresh release can be newer than the 7-day window.
 # Exclude them so the peers resolve, while the delay still guards everything else.
 minimumReleaseAgeExclude:
+  # First-party shared config (@btravstack scope): adopt immediately, skip the delay.
+  - "@btravstack/commitlint"
+  - "@btravstack/oxlint"
   - "@btravstack/theme"
+  - "@btravstack/tsconfig"
+  - "@btravstack/typedoc"
+  # Temporary: fast-uri 3.1.4 (the GHSA-v2hh-gcrm-f6hx override above) is younger
+  # than the 7-day cutoff. Remove once 3.1.4 is 7 days old (published 2026-07-19).
+  - fast-uri
   - demesne
   - unthrown
   - "@unthrown/orpc"

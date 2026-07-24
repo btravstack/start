@@ -1,7 +1,7 @@
 import { Layer } from "demesne";
 
-import { Config } from "../config.js";
 import { Logger } from "../application/ports.js";
+import { Config } from "../config.js";
 
 export const LoggerLive = Layer.inject(Logger, { config: Config }, ({ config }) => ({
   info: (msg) => {
